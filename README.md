@@ -92,3 +92,11 @@ Using RwLock<> is necessary. This is because it allows multiple threads to read 
 It doesn't allow us to do so since Rust has strict safety guarantees to prevent data races and undefined behavior, especially in concurrent environments. Unlike Java, it's easy to modify a static variable through static methods. Rust on the other hand requires any mutable global state to be wrapped in thread-safe constructs like RwLock or Mutex. This design choice forces to handle concurrency explicitly, ensuring that even global mutable variables are accessed safely and resulting in more robust, error-free code.
 
 #### Reflection Subscriber-2
+1. Have you explored things outside of the steps in the tutorial, for example: src/lib.rs? If not, explain why you did not do so. If yes, explain things that you have learned from those other parts of code.
+I didn't explore outside of the steps in the tutorial and I just followed as instructed. This approach allowed me to focus on understanding the main concepts in the tutorial without getting sidetracked by additional details.
+
+2. Since you have completed the tutorial by now and have tried to test your notification system by spawning multiple instances of Receiver, explain how Observer pattern eases you to plug in more subscribers. How about spawning more than one instance of Main app, will it still be easy enough to add to the system?
+The Observer pattern is good for adding new subscribers since one only needs to implement a defined interface. This allows them to be integrated without any changes to the publisher’s code. This means many Receiver instances can be added easily. If multiple instances of the main app is run, integrating them remains simple, as long as each one follows the Observer structure. 
+
+3. Have you tried to make your own Tests, or enhance documentation on your Postman collection? If you have tried those features, tell us whether it is useful for your work (it can be your tutorial work or your Group Project).
+I haven't tried creating my own tests on my Postman collection yet since I wanted to follow along the steps given in the tutorial. However, creating more tests would most likely improve my project's maintainability.
